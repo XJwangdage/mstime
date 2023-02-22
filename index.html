@@ -2,10 +2,25 @@
 <head>
   <meta charset="UTF-8">
   <title>毫秒时间</title>
-  <script src="main.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #000;
+    }
+    #sub{
+      padding: 90% 0;
+      text-align: center;
+      color: #FFF;
+      font-family:"Monospace";
+      margin: auto;
+    }
+  </style>
+  <script>
+    timestr = () => {document.querySelector('#timestr').innerHTML=newDate(Date.now()).toLocaleString() + '.' + new Date(Date.now()).getMilliseconds().toString().padStart(3, '0')}
+    timenow = () =>{document.querySelector('#timenow').innerHTML=Date.now()}
+    setInterval(timestr)
+    setInterval(timenow)
+  </script>
 </head>
-
 <body>
   <div id="sub">
     <p id="timestr"></p>
